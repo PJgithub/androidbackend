@@ -1,0 +1,25 @@
+<%= form_for(@accessablemarker) do |f| %>
+  <% if @accessablemarker.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@accessablemarker.errors.count, "error") %> prohibited this accessablemarker from being saved:</h2>
+
+      <ul>
+      <% @accessablemarker.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :markerid %><br>
+    <%= f.number_field :markerid %>
+  </div>
+  <div class="field">
+    <%= f.label :accesorid %><br>
+    <%= f.number_field :accesorid %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

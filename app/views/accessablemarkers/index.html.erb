@@ -1,0 +1,29 @@
+<h1>Listing accessablemarkers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Markerid</th>
+      <th>Accesorid</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @accessablemarkers.each do |accessablemarker| %>
+      <tr>
+        <td><%= accessablemarker.markerid %></td>
+        <td><%= accessablemarker.accesorid %></td>
+        <td><%= link_to 'Show', accessablemarker %></td>
+        <td><%= link_to 'Edit', edit_accessablemarker_path(accessablemarker) %></td>
+        <td><%= link_to 'Destroy', accessablemarker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Accessablemarker', new_accessablemarker_path %>
