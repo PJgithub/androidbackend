@@ -51,6 +51,16 @@ class PeopleController < ApplicationController
     end
   end
 
+  #PUT /people/login
+  def login
+    @person = Person.find(params[:username])
+    if(person.password == params[:password])
+      render json:"yes"
+    else
+      render json:"no"
+    end
+  end
+
   # DELETE /people/1
   # DELETE /people/1.json
   def destroy
